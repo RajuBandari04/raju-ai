@@ -12,9 +12,12 @@ app.use(express.static(__dirname));
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
-const ai = new GoogleGenAI({
-  apiKey: process.env.GEMINI_API_KEY
-});
+const API_KEYS = [
+  process.env.GEMINI_API_KEY,
+  process.env.GEMINI_API_KEY_1,
+  process.env.GEMINI_API_KEY_2,
+  process.env.GEMINI_API_KEY_3
+];
 app.post("/chat", async (req, res) => {
   try {
 
@@ -42,10 +45,30 @@ ${messages
   .join("\n")}
 `;
 
-    const response = await ai.models.generateContent({
+   let response;
+
+for (const key of API_KEYS) {
+
+  try {
+
+    const ai = new GoogleGenAI({
+      apiKey: key
+    });
+
+    response = await ai.models.generateContent({
       model: "gemini-2.5-flash",
       contents: prompt
     });
+
+    break;
+
+  } catch (err) {
+
+    console.log("API failed, trying next...");
+
+  }
+
+}
 
     res.json({
       reply: response.text
