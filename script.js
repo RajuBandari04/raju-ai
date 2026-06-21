@@ -58,9 +58,35 @@ div.appendChild(title);
 
 div.appendChild(dots);
 
-        div.addEventListener(
-        "click",
-        function(){
+dots.addEventListener(
+"click",
+function(e){
+
+e.stopPropagation();
+
+const confirmDelete =
+confirm("Delete this chat?");
+
+if(confirmDelete){
+
+chats = chats.filter(
+c => c.id !== chat.id
+);
+
+localStorage.setItem(
+"raju_ai_chats",
+JSON.stringify(chats)
+);
+
+updateSidebar();
+
+}
+
+});
+
+div.addEventListener(
+"click",
+function(){
 
             history =
             [...chat.messages];
