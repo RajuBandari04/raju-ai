@@ -72,6 +72,16 @@ border-bottom:1px solid #333;
 background:#171717;
 }
 
+#menuBtn{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:24px;
+cursor:pointer;
+margin-right:10px;
+}
+
 #chatBox{
 flex:1;
 overflow-y:auto;
@@ -170,7 +180,21 @@ overflow:auto;
 }
 
 .sidebar{
-display:none;
+display:flex;
+position:fixed;
+left:-260px;
+top:0;
+height:100%;
+z-index:2000;
+transition:0.3s;
+}
+
+.sidebar.show{
+left:0;
+}
+
+#menuBtn{
+display:block;
 }
 
 .main{
