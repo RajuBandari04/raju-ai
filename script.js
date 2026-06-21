@@ -250,7 +250,6 @@ function(){
    chatBox.innerHTML =
 `<div class="welcome">
     <h1>🤖 Raju AI</h1>
-    <p>Ask anything macha 😎</p>
 </div>`;
 
 updateSidebar();
