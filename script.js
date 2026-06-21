@@ -52,15 +52,7 @@ document.createElement("button");
 dots.textContent = "⋮";
 
 dots.className = "dots-btn";
-        dots.addEventListener(
-"click",
-function(e){
-
-e.stopPropagation();
-
-alert("Delete Chat\nShare Chat");
-
-});
+        
 
 div.appendChild(title);
 
