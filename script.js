@@ -5,6 +5,11 @@ const promptInput = document.getElementById("prompt");
 const sendBtn = document.getElementById("sendBtn");
 const newChatBtn = document.getElementById("newChatBtn");
 const historyBox = document.getElementById("chatHistory");
+const menuBtn =
+document.getElementById("menuBtn");
+
+const sidebar =
+document.querySelector(".sidebar");
 
 let history = [];
 let chats =
@@ -264,5 +269,12 @@ function(e){
     + file.name,
     "user"
     );
+
+});
+menuBtn.addEventListener(
+"click",
+function(){
+
+sidebar.classList.toggle("show");
 
 });
