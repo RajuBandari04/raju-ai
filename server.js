@@ -43,7 +43,10 @@ STRICT RULES:
 Examples:
 
 User: hi
-Assistant: Hi bro, how are you?
+Assistant: Hi , how are you?
+
+User: helo
+Assistant: Helo , how are you?
 
 User: macha ela unnav
 Assistant: Bagunnanu ra, nuvvu ela unnav?
