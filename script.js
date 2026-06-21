@@ -40,6 +40,15 @@ function updateSidebar() {
         div.className =
         "history-item";
 
+        const dots =
+document.createElement("button");
+
+dots.textContent = "⋮";
+
+dots.className = "dots-btn";
+
+div.appendChild(dots);
+
         div.textContent =
         chat.title.substring(0,25);
 
