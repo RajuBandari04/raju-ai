@@ -38,19 +38,24 @@ function updateSidebar() {
         document.createElement("div");
 
         div.className =
-        "history-item";
+"history-item";
 
-        const dots =
+const title =
+document.createElement("span");
+
+title.textContent =
+chat.title.substring(0,25);
+
+const dots =
 document.createElement("button");
 
 dots.textContent = "⋮";
 
 dots.className = "dots-btn";
 
-div.appendChild(dots);
+div.appendChild(title);
 
-        div.textContent =
-        chat.title.substring(0,25);
+div.appendChild(dots);
 
         div.addEventListener(
         "click",
