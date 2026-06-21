@@ -56,6 +56,10 @@ margin-bottom:8px;
 border-radius:8px;
 cursor:pointer;
 font-size:14px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .main{
@@ -245,3 +249,19 @@ z-index:999;
 #overlay.show{
 display:block;
 }
+
+.dots-btn{
+display:none;
+background:none;
+border:none;
+color:white;
+font-size:18px;
+cursor:pointer;
+}
+
+.history-item:hover .dots-btn{
+display:block;
+}
+
+
+
