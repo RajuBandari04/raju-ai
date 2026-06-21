@@ -6,8 +6,7 @@ const sendBtn = document.getElementById("sendBtn");
 const newChatBtn = document.getElementById("newChatBtn");
 const historyBox = document.getElementById("chatHistory");
 
-let history =
-JSON.parse(localStorage.getItem("raju_ai_history")) || [];
+let history = [];
 let chats =
 JSON.parse(localStorage.getItem("raju_ai_chats")) || [];
 
@@ -41,7 +40,7 @@ function updateSidebar() {
         function(){
 
             history =
-            chat.messages;
+            [...chat.messages];
 
             localStorage.setItem(
             "raju_ai_history",
@@ -101,7 +100,6 @@ function loadHistory(){
 
 }
 
-loadHistory();
 updateSidebar();
 
 async function sendMessage(){
